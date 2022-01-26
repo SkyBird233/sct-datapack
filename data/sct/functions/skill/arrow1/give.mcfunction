@@ -1,0 +1,1 @@
+give @s carrot_on_a_stick{skill_arrow1:1}

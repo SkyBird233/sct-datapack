@@ -1,0 +1,7 @@
+{
+    "type": "overworld",
+    "generator": {
+        "type": "debug",
+        "seed": 0
+    }
+}
