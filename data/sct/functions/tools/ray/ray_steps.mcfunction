@@ -1,6 +1,5 @@
-# 前移（待测试）
-execute as @e[tag=rayMarker] run tp ^ ^0.1 ^
-#execute as @s at @e[tag=rayMarker] run tp ^ ^0.1 ^
+# 前移
+execute as @e[tag=rayMarker] at @s run tp ^ ^ ^0.1
 
 # 找到了
 execute as @e[tag=rayMarker] if entity @e[tag=canBeSelected,distance=..0.1,limit=1,sort=nearest] run tag @e[tag=canBeSelected,distance=..0.1,limit=1,sort=nearest] add raySelected
@@ -10,7 +9,7 @@ execute as @e[tag=rayMarker] if entity @e[tag=canBeSelected,distance=..0.1,limit
 execute as @e[tag=rayMarker] unless block ~ ~ ~ air run tag @s add rayMarkerStop
 
 # 步数超了
-execute as @e[tag=rayMarker,scores={raySteps=40..}] run tag @s add rayMarkerStop
+execute positioned ~ ~1.62 ~ as @e[tag=rayMarker,distance=4..] run tag @s add rayMarkerStop
 
 # 没问题则递归
 execute as @e[tag=rayMarker,tag=!rayMarkerStop] run function sct:tools/ray/ray_steps
