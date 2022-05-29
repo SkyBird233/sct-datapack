@@ -1,4 +1,4 @@
-# SCT
+# SKA
 --- 
 为一张 Minecraft 地图写的数据包
 

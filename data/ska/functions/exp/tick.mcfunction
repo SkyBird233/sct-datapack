@@ -7,18 +7,18 @@ execute store result score @s exp_points run experience query @s points
 # 控制 level 范围
 execute if score @s exp_level < @s exp_level_t run experience add @s 1 levels
 execute if score @s exp_level < @s exp_level_t run experience set @s 1 points
-execute if score @s exp_level > @s exp_level_t run function sct:exp/set_max_points
+execute if score @s exp_level > @s exp_level_t run function ska:exp/set_max_points
 execute if score @s exp_level > @s exp_level_t run experience add @s -1 levels
 
 # 受伤扣 exp
-execute if score @s health_temp > @s health run function sct:exp/health
+execute if score @s health_temp > @s health run function ska:exp/health
 execute if score @s health_temp < @s health run scoreboard players operation @s health_temp = @s health
 execute if score @s exp_points = @s zero run scoreboard players set @s health_delta 0
 execute if score @s exp_points > @s zero if score @s health_delta > @s zero run scoreboard players remove @s health_delta 1
 execute if score @s exp_points > @s zero if score @s health_delta > @s zero run experience add @s -1
 
 # exp 清空惩罚
-execute if score @s exp_points = @s zero run function sct:exp/punishment
+execute if score @s exp_points = @s zero run function ska:exp/punishment
 
 # 自动恢复 exp
 execute as @s if score @s exp_re >= @s exp_re_ticks if score @s exp_points < @s exp_max_points run experience add @s 1 points
