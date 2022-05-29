@@ -5,7 +5,7 @@ execute as @e[type=marker,tag=wasd_pre,limit=1,sort=nearest] at @s run tp @s ~ ~
 execute as @s store result score @s wasd_ro2 run data get entity @e[type=marker,tag=wasd_pre,limit=1,sort=nearest] Rotation[0] 10
 
 # 调用 wasd 看看玩家有没移动 / 往哪儿移（写入记分板）
-execute as @s run function sct:tools/wasd/judge
+execute as @s run function ska:tools/wasd/judge
 
 # tp 回记录的位置（注意角度)
 execute as @s store result entity @e[type=marker,tag=wasd_pre,limit=1,sort=nearest] Rotation[0] float 0.1 run scoreboard players get @s wasd_ro1
@@ -23,19 +23,19 @@ execute as @s if score @s temp4 matches 1 run tp @s @e[type=marker,tag=wasd_pre,
 ## 不动
 execute if score @s wasd_ro matches 0 if score @s tp_select_cd matches 0
 ## 前
-execute if score @s wasd_ro matches 1 if score @s tp_select_cd matches 0 run function sct:tp/gui/move/forward
+execute if score @s wasd_ro matches 1 if score @s tp_select_cd matches 0 run function ska:tp/gui/move/forward
 ## 后
-execute if score @s wasd_ro matches 3 if score @s tp_select_cd matches 0 run function sct:tp/gui/move/backwards
+execute if score @s wasd_ro matches 3 if score @s tp_select_cd matches 0 run function ska:tp/gui/move/backwards
 ## 左
-execute if score @s wasd_ro matches 4 if score @s tp_select_cd matches 0 run function sct:tp/gui/move/left
+execute if score @s wasd_ro matches 4 if score @s tp_select_cd matches 0 run function ska:tp/gui/move/left
 ## 右
-execute if score @s wasd_ro matches 2 if score @s tp_select_cd matches 0 run function sct:tp/gui/move/right
+execute if score @s wasd_ro matches 2 if score @s tp_select_cd matches 0 run function ska:tp/gui/move/right
 ## 调用 show_selected
-execute as @s run function sct:tp/gui/show_selected
+execute as @s run function ska:tp/gui/show_selected
 
 
 ## 跳
-execute if score @s wasd_ro matches 5 if score @s tp_select_cd matches 0 run function sct:tp/gui/move/up
+execute if score @s wasd_ro matches 5 if score @s tp_select_cd matches 0 run function ska:tp/gui/move/up
 
 # 冷却 -1
 execute as @s unless score @s tp_select_cd matches 0 run scoreboard players remove @s tp_select_cd 1

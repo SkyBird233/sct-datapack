@@ -18,11 +18,11 @@ execute as @e[tag=skill_arrow1_p5] at @s if block ~ ~1.3 ~ air run summon arrow 
 
 # 设置箭 motion
 scoreboard players set @e[tag=skill_arrow1_a] motion_t 1
-execute as @e[tag=skill_arrow1_a,tag=skill_arrow1_a1] at @s run function sct:tools/motion/main
-execute as @e[tag=skill_arrow1_a,tag=skill_arrow1_a2] at @s run function sct:tools/motion/main
-execute as @e[tag=skill_arrow1_a,tag=skill_arrow1_a3] at @s run function sct:tools/motion/main
-execute as @e[tag=skill_arrow1_a,tag=skill_arrow1_a4] at @s run function sct:tools/motion/main
-execute as @e[tag=skill_arrow1_a,tag=skill_arrow1_a5] at @s run function sct:tools/motion/main
+execute as @e[tag=skill_arrow1_a,tag=skill_arrow1_a1] at @s run function ska:tools/motion/main
+execute as @e[tag=skill_arrow1_a,tag=skill_arrow1_a2] at @s run function ska:tools/motion/main
+execute as @e[tag=skill_arrow1_a,tag=skill_arrow1_a3] at @s run function ska:tools/motion/main
+execute as @e[tag=skill_arrow1_a,tag=skill_arrow1_a4] at @s run function ska:tools/motion/main
+execute as @e[tag=skill_arrow1_a,tag=skill_arrow1_a5] at @s run function ska:tools/motion/main
 
 # 移除箭的 Tags
 execute as @e[tag=skill_arrow1_a] run tag @s remove skill_arrow1_a
