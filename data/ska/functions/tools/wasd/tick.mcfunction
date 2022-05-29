@@ -1,4 +1,4 @@
-#execute as @a[tag=wasd] run function sct:tools/wasd/tick
+#execute as @a[tag=wasd] run function ska:tools/wasd/tick
 # Pos 为保证精度乘 1000 之类，rotation 乘 10
 
 # 获取 wasd_ro2（应该要判断位置变了再执行但懒得写了）
@@ -11,7 +11,7 @@ execute as @s store result score @s wasd_ro2 run data get entity @e[type=marker,
 execute as @s run kill @e[type=marker,tag=wasd_pre]
 
 # 判断朝向
-execute as @s run function sct:tools/wasd/judge
+execute as @s run function ska:tools/wasd/judge
 
 # 写入此刻 rotation,x,y,z 
 execute as @s store result score @s wasd_x run data get entity @s Pos[0] 1000
